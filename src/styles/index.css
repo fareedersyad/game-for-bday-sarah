@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose: #e8899e;
+  --rose-deep: #b85c78;
+  --rose-soft: #f6d3dc;
+  --dusty: #d8a7b1;
+  --ivory: #f8f6ef;
+  --cream: #f3ebdd;
+  --sage: #a3b18a;
+  --sage-soft: #ccd5ae;
+  --forest: #344e41;
+  --strawberry: #d94b55;
+  --soft-pink: #f3d6d8;
+  --pearl: #fbf8f6;
+  --gold: #d4a84f;
+  --gold-soft: #f3dca4;
+  --gold-deep: #a87c2a;
+  --lavender: #c3b1e1;
+  --plum: #5a3553;
+  --plum-deep: #2e1a2c;
+  /* Set from JS for iOS Safari (100vh includes the toolbar there). */
+  --app-height: 100vh;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: var(--app-height);
+  overflow: hidden;
+  background: #2e1a2c;
+  overscroll-behavior: none;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
+}
+
+body {
+  font-family: Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--plum);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+  touch-action: auto;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+canvas {
+  touch-action: none;
+  display: block;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+}
+.font-script {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+}
+
+/* ---------- Royal surfaces ---------- */
+@layer components {
+  .royal-panel {
+    background: linear-gradient(160deg, rgba(248, 246, 239, 0.98), rgba(243, 235, 221, 0.96) 70%, rgba(204, 213, 174, 0.35));
+    border: 1px solid rgba(163, 177, 138, 0.75);
+    box-shadow:
+      0 18px 50px -12px rgba(52, 78, 65, 0.45),
+      inset 0 0 0 1px rgba(212, 175, 112, 0.35);
+    border-radius: 22px;
+  }
+  .royal-glass {
+    background: rgba(248, 246, 239, 0.82);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(163, 177, 138, 0.7);
+    box-shadow: 0 8px 26px -10px rgba(52, 78, 65, 0.45);
+  }
+  .royal-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition active:scale-95;
+    background: linear-gradient(180deg, #f1dfb4 0%, #d4af70 55%, #b8924f 100%);
+    color: #2b3f34;
+    border: 1px solid rgba(168, 124, 42, 0.8);
+    box-shadow:
+      0 6px 18px -6px rgba(168, 124, 42, 0.8),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+  .royal-btn:focus-visible,
+  .soft-btn:focus-visible,
+  .icon-btn:focus-visible {
+    outline: 3px solid rgba(184, 92, 120, 0.6);
+    outline-offset: 2px;
+  }
+  .soft-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 font-semibold transition active:scale-95;
+    background: rgba(248, 246, 239, 0.85);
+    color: var(--forest);
+    border: 1px solid rgba(163, 177, 138, 0.8);
+  }
+  .rose-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition active:scale-95;
+    background: linear-gradient(180deg, #ee8a91 0%, #d94b55 62%, #b93a45 100%);
+    color: #fff;
+    border: 1px solid rgba(160, 45, 55, 0.8);
+    box-shadow: 0 6px 18px -6px rgba(185, 58, 69, 0.7);
+  }
+  .icon-btn {
+    @apply inline-flex items-center justify-center rounded-full transition active:scale-90;
+    width: 44px;
+    height: 44px;
+    background: rgba(248, 246, 239, 0.88);
+    border: 1px solid rgba(163, 177, 138, 0.8);
+    color: var(--forest);
+    box-shadow: 0 6px 16px -8px rgba(52, 78, 65, 0.55);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  .gold-text {
+    background: linear-gradient(180deg, #fff3c9 0%, #e9c676 45%, #b98a32 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 168, 79, 0.85), transparent);
+  }
+  .paper {
+    background-color: #fdf6e7;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.85), transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(226, 196, 150, 0.35), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(150, 110, 60, 0.035) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(150, 110, 60, 0.025) 0 1px, transparent 1px 4px);
+    box-shadow:
+      0 30px 60px -20px rgba(60, 30, 20, 0.55),
+      inset 0 0 60px rgba(196, 150, 90, 0.25);
+  }
+}
+
+.safe-pad {
+  padding-top: max(12px, var(--safe-top));
+  padding-right: max(12px, var(--safe-right));
+  padding-bottom: max(12px, var(--safe-bottom));
+  padding-left: max(12px, var(--safe-left));
+}
+
+.scroll-y {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+}
+
+.scroll-y::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-y::-webkit-scrollbar-thumb {
+  background: rgba(212, 168, 79, 0.5);
+  border-radius: 3px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.floaty {
+  animation: floaty 3.2s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(243, 220, 164, 0.75);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(243, 220, 164, 0);
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floaty,
+  .shimmer,
+  .pulse-ring {
+    animation: none;
+  }
+}

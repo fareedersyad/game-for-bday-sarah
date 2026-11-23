@@ -1,0 +1,14 @@
+# Optional — only needed if you ever deploy with the Wrangler CLI instead of
+# the Cloudflare dashboard (the dashboard is the recommended way: see README).
+name = "fareed-ai-proxy"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+# Variables are managed in the Cloudflare dashboard (Settings → Variables and
+# Secrets). They are deliberately NOT listed here, so a CLI deploy can never
+# overwrite what you set in the dashboard.
+#
+# The API key is a SECRET — never put it in this file or in GitHub. It already
+# exists in the dashboard as GEMINI_API_KEY. (CLI alternative:
+#   npx wrangler secret put GEMINI_API_KEY )
+keep_vars = true

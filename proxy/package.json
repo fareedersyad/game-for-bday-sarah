@@ -1,0 +1,17 @@
+{
+  "name": "fareed-ai-proxy",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Cloudflare Worker that lets Prince Fareed answer with Google Gemini without exposing the API key.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250101.0",
+    "typescript": "5.9.3",
+    "wrangler": "^4.0.0"
+  }
+}

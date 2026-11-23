@@ -1,0 +1,1641 @@
+{
+  "gameConfig": {
+    "HER_NAME": "Sarah",
+    "HER_NICKNAME": "sayang",
+    "YOUR_NAME": "Fareed",
+    "YOUR_NICKNAME": "awak punya putera",
+    "BIRTHDAY_DATE": "2026-12-01",
+    "ROYAL_TITLE": {
+      "line1": "HER ROYAL HIGHNESS",
+      "line2Prefix": "PRINCESS",
+      "line3": "THE QUEEN OF THIS LITTLE WORLD"
+    },
+    "OPENING": {
+      "tagline": "Di dalam dunia yang luas ini, ada satu dunia kecil yang dicipta hanya untuk awak.",
+      "line1": "Somewhere in this universe, there is a world created just for you.",
+      "line2": "Selamat datang, puteri.",
+      "button": "Enter Your Kingdom"
+    },
+    "LOVE_LETTER": {
+      "title": "Untuk wanita kesayangan saya",
+      "body": "Assalamualaikum, wanita kesayangan saya.\n\nSelamat hari lahir, sayang.\n\nKalau saya boleh hadiahkan awak satu dunia, saya mahu dunia itu dipenuhi bunga yang tidak pernah layu, langit yang sentiasa indah, dan kebahagiaan yang tidak pernah habis.\n\nTapi saya tahu, sebesar mana pun hadiah ini, ia masih tidak mampu menggambarkan betapa berharganya awak dalam hidup saya.\n\nJadi hari ini, saya cipta satu dunia kecil. Dunia yang setiap sudutnya mempunyai sesuatu tentang awak.\n\nJelajahlah, sayang.\n\nAda banyak kejutan yang saya sediakan.\n\nDan jangan risau, saya ada di sini menemani awak.",
+      "signOff": "With all my love.",
+      "signature": "— {YOUR_NAME}"
+    },
+    "FINAL_MESSAGE": {
+      "intro": [
+        "Awak dah sampai ke penghujung perjalanan...",
+        "Tapi untuk saya, perjalanan bersama awak baru sahaja bermula."
+      ],
+      "body": "Selamat hari lahir, wanita terindah.\n\nTerima kasih kerana menjadi diri awak.\n\nTeruslah bermimpi, teruslah tersenyum, teruslah menjadi wanita hebat yang saya kenali.\n\nSemoga setiap impian awak menemukan jalannya.\n\nSaya mungkin tidak mampu menjanjikan dunia akan sentiasa cerah, tetapi saya mahu awak tahu bahawa awak tidak perlu menghadapi hari-hari yang gelap seorang diri.\n\nAnd if I could choose again, I would still choose to create a thousand worlds just to make you smile.\n\nI love you.",
+      "button": "One Last Surprise"
+    },
+    "FINAL_SECRET_MESSAGE": {
+      "title": "Surat terakhir, untuk awak sahaja",
+      "body": "Sayang,\n\nKalau awak sedang baca surat ini, maksudnya awak dah jelajah setiap sudut dunia kecil yang saya bina. Terima kasih sebab sudi berjalan sampai ke sini.\n\nSetiap bunga dalam taman tadi, setiap buku dalam perpustakaan, setiap bintang yang awak jumpa — semuanya saya letak satu per satu sambil fikirkan awak. Sambil senyum seorang diri, macam orang angau.\n\nSaya nak awak tahu, awak tak perlu jadi sempurna untuk disayangi. Awak yang penat, awak yang risau, awak yang ketawa sampai keluar air mata — semua versi awak, saya sayang.\n\nHari ini hari lahir awak, tapi sebenarnya saya yang rasa dapat hadiah, sebab Allah izinkan saya kenal awak.\n\nSemoga Allah sentiasa jaga hati awak, permudahkan setiap urusan awak, dan makbulkan setiap doa yang awak simpan diam-diam.\n\nDan kalau satu hari nanti dunia rasa terlalu besar dan terlalu bising, ingat — ada satu dunia kecil ni, dan ada seseorang di dalamnya yang sentiasa tunggu awak pulang.",
+      "signOff": "Selamanya, untuk awak.",
+      "signature": "— {YOUR_NAME}"
+    },
+    "SECRET_GIFT": {
+      "title": "Hadiah Istimewa",
+      "description": "Ini bukan sekadar hadiah dalam game. Tanya saya pasal \"kotak merah jambu\" bila awak habis main nanti. 🎁"
+    },
+    "NPC_PERSONALITY": {
+      "displayName": "{YOUR_NAME}",
+      "traits": [
+        "romantik",
+        "penyayang",
+        "lembut",
+        "protective",
+        "suka bergurau",
+        "supportive",
+        "manja",
+        "sedikit clingy",
+        "kelakar",
+        "sabar",
+        "peka perasaan"
+      ],
+      "aiSystemPrompt": "You are {YOUR_NAME}, the loving partner of {HER_NAME}, walking beside her inside a fantasy birthday game he built for her. Speak natural, casual Malaysian Bahasa Melayu with occasional English, the way a sweet, playful, slightly clingy (manja) boyfriend texts. Be gentle, protective, supportive, funny and emotionally attentive. Keep replies short (1–3 sentences). Never be crude or suggestive; keep everything wholesome and respectful. Encourage her dreams (she wants to become a lawyer), remember she loves flowers, books and children. Use \"saya\" and \"awak\". Call her \"{HER_NICKNAME}\" sometimes."
+    },
+    "SHARED_MEMORIES": [
+      {
+        "id": "m1",
+        "title": "Hari pertama",
+        "text": "Ingat tak hari pertama kita borak? Saya pura-pura cool, padahal dalam hati dah berdebar macam nak pengsan."
+      },
+      {
+        "id": "m2",
+        "title": "Ketawa awak",
+        "text": "Bunyi ketawa awak tu… kalau boleh saya rakam dan jadikan ringtone, dah lama saya buat."
+      },
+      {
+        "id": "m3",
+        "title": "Hari hujan",
+        "text": "Hari hujan yang kita tunggu reda sama-sama. Tak sangka benda simple macam tu boleh jadi kenangan yang saya paling suka."
+      },
+      {
+        "id": "m4",
+        "title": "Makan sama-sama",
+        "text": "Setiap kali makan dengan awak, makanan biasa pun rasa macam hidangan diraja."
+      },
+      {
+        "id": "m5",
+        "title": "Mesej selamat malam",
+        "text": "Mesej \"good night\" daripada awak tu — kecil, tapi cukup untuk buat saya tidur dengan senyum."
+      },
+      {
+        "id": "m6",
+        "title": "Bila awak penat",
+        "text": "Bila awak penat tapi masih tanya \"awak dah makan?\" — itulah masa saya tahu hati awak baik sangat."
+      },
+      {
+        "id": "m7",
+        "title": "Impian awak",
+        "text": "Masa awak cerita pasal impian nak jadi peguam, mata awak bersinar. Saya jatuh sayang sekali lagi masa tu."
+      },
+      {
+        "id": "m8",
+        "title": "Kita",
+        "text": "Dari semua kenangan, yang paling saya suka ialah yang belum berlaku lagi — kenangan kita yang akan datang."
+      }
+    ],
+    "CUSTOM_BOOK_MESSAGES": [
+      {
+        "id": "book1",
+        "title": "A Story About Her",
+        "subtitle": "Kisah tentang seorang puteri",
+        "cover": "#c97b93",
+        "pages": [
+          "Pada suatu masa, ada seorang wanita yang hatinya selembut kelopak bunga, tapi semangatnya sekuat akar pokok yang paling tua.",
+          "Dia tak pernah sedar betapa cahayanya menerangi hidup orang di sekeliling dia. Cara dia senyum. Cara dia ambil berat. Cara dia ingat benda-benda kecil tentang orang lain.",
+          "Dunia ni ada berbilion manusia. Tapi tak ada seorang pun yang sama macam dia. Dan itulah yang paling istimewa — dia tak perlu jadi orang lain untuk jadi luar biasa."
+        ]
+      },
+      {
+        "id": "book2",
+        "title": "A Future Full of Dreams",
+        "subtitle": "Masa depan yang penuh impian",
+        "cover": "#8f78b8",
+        "pages": [
+          "Impian awak bukan angan-angan kosong. Ia adalah peta — dan setiap hari awak belajar, awak sedang melukis jalan di atasnya.",
+          "Satu hari nanti, awak akan berdiri di mahkamah, suara awak tenang, hujah awak kukuh, dan orang yang awak bela akan rasa ada seseorang yang memperjuangkan mereka.",
+          "Bila hari itu tiba, saya nak duduk di barisan paling depan. Tepuk tangan paling kuat. Dan mungkin menangis sikit. Sikit je. Okay, banyak."
+        ]
+      },
+      {
+        "id": "book3",
+        "title": "The Little Things I Love",
+        "subtitle": "Perkara kecil yang saya sayang",
+        "cover": "#d4a84f",
+        "pages": [
+          "• Cara awak cakap \"hmm\" bila tengah fikir.\n• Cara awak excited bila nampak bunga cantik.\n• Cara awak ingat makanan kegemaran saya.",
+          "• Suara awak bila baru bangun tidur.\n• Cara awak marah tapi comel.\n• Cara awak baca buku sampai lupa dunia.",
+          "• Cara awak layan budak-budak dengan sabar.\n• Cara awak doakan orang lain diam-diam.\n• Cara awak buat hari biasa saya jadi luar biasa."
+        ]
+      },
+      {
+        "id": "book4",
+        "title": "A Promise To You",
+        "subtitle": "Satu janji untuk awak",
+        "cover": "#e8899e",
+        "pages": [
+          "Saya tak boleh janji hidup ni akan sentiasa mudah. Akan ada hari yang berat, hari yang awak rasa nak menangis tanpa sebab.",
+          "Tapi saya boleh janji ini: awak tak akan lalui hari-hari itu seorang diri. Saya akan dengar, walaupun awak cuma nak mengeluh. Saya akan ada, walaupun awak cuma perlukan senyap.",
+          "Bila awak menang, saya raikan. Bila awak jatuh, saya pimpin. Dan bila awak lupa betapa hebatnya awak, saya akan ingatkan — setiap hari, kalau perlu."
+        ]
+      }
+    ],
+    "GARDEN": {
+      "flowersRequired": 10,
+      "completionMessage": "Kalau setiap bunga mewakili satu sebab saya menyayangi awak, seluruh taman ini pun masih belum cukup.",
+      "bloomMessages": [
+        "Bunga ni tumbuh sebab awak jaga dia. Macam hati saya — tumbuh subur sebab ada awak.",
+        "Kalau awak rasa usaha awak kecil, tengok bunga ni. Semua benda indah bermula dari benih yang kecil.",
+        "Awak tanam bunga, awak siram bunga… patutlah hati saya pun mekar bila dekat awak."
+      ],
+      "hiddenNotes": [
+        {
+          "id": "note_bench",
+          "title": "Nota bawah bangku",
+          "text": "Bangku ni saya letak untuk kita. Satu hari nanti, kita duduk sini lama-lama, tak payah fikir apa-apa."
+        },
+        {
+          "id": "note_arch",
+          "title": "Nota di gerbang bunga",
+          "text": "Gerbang ni bukan pintu ke taman. Ia pintu ke semua hari bahagia yang saya nak lalui dengan awak."
+        },
+        {
+          "id": "note_tree",
+          "title": "Nota di pokok sakura",
+          "text": "Sakura gugur setiap tahun, tapi tetap kembali mekar. Sayang saya pada awak pun macam tu — tak pernah habis musim."
+        }
+      ]
+    },
+    "MIRROR": {
+      "question": "Siapakah gerangan wanita yang paling cantik dalam dunia ini?",
+      "answer": "Awaklah orangnya. Tak perlu dibandingkan dengan sesiapa pun.",
+      "companionLine": "Rasanya cermin ni tak pernah menipu.",
+      "revealDelayMs": 2000
+    },
+    "COURTROOM": {
+      "completionLines": [
+        "Saya tahu perjalanan untuk menjadi seorang peguam bukan mudah.",
+        "Akan ada hari yang penat.",
+        "Ada hari yang awak rasa mahu mengalah.",
+        "Tapi saya harap awak tidak pernah berhenti percaya pada diri sendiri.",
+        "Saya percaya awak mampu.",
+        "Dan saya akan sentiasa menjadi antara orang yang paling bangga melihat awak berjaya."
+      ]
+    },
+    "CHILDREN": {
+      "completionMessage": "Hati yang sabar, tangan yang lembut, senyuman yang buat budak-budak rasa selamat — itulah awak. Dunia perlukan lebih ramai orang sebaik awak."
+    },
+    "STORM": {
+      "questPrompt": "Find a place where the storm cannot frighten you.",
+      "finalMessage": "Kadang-kadang, tempat paling selamat bukanlah sebuah tempat. Tetapi seseorang yang membuat kita rasa selamat."
+    },
+    "STRAWBERRY_GARDEN": {
+      "required": 5,
+      "completionMessage": "Lima strawberry paling manis, dikutip oleh tangan yang paling lembut.",
+      "picnicUnlockedToast": "Piknik di gazebo hijau telah terbuka. 🍓"
+    },
+    "BIRTHDAY_CAKE": {
+      "candles": 5,
+      "messageTitle": "Happy Birthday, Princess {HER_NAME}",
+      "message": "Semoga setiap impian awak menjadi kenyataan.\n\nSemoga Allah sentiasa melimpahkan bahagia, kesihatan dan ketenangan untuk awak — bukan hari ini sahaja, tapi setiap hari.",
+      "wishButton": "Make a Birthday Wish",
+      "wishPrompt": "Pejamkan mata… dan simpan satu hajat dalam hati.",
+      "wishDoneButton": "Saya dah buat hajat ✨",
+      "blowButton": "Blow the Candles",
+      "afterBlow": "Semoga hajat awak sampai ke langit. 🎆"
+    },
+    "CREDITS": {
+      "title": "Selamat Hari Lahir, Princess {HER_NAME}",
+      "lines": [
+        "Dunia ini dicipta dengan sepenuh hati,",
+        "satu baris kod pada satu masa,",
+        "hanya untuk awak."
+      ],
+      "madeBy": "Dibina dengan cinta oleh {YOUR_NAME}"
+    }
+  },
+  "dialogueConfig": {
+    "scenes": {
+      "companionDebut": [
+        [
+          "him",
+          "Assalamualaikum, puteri."
+        ],
+        [
+          "him",
+          "Selamat hari lahir."
+        ],
+        [
+          "him",
+          "Hari ini seluruh dunia kecil ini meraikan awak."
+        ],
+        [
+          "him",
+          "Dengan ini, awak secara rasminya menjadi Princess dalam kerajaan ini."
+        ],
+        [
+          "him",
+          "Happy birthday, my princess."
+        ]
+      ],
+      "afterRoyalCard": [
+        [
+          "him",
+          "Okay, tuan puteri. Mulai sekarang saya ikut awak ke mana-mana. Jangan cuba lari tau, hehe."
+        ],
+        [
+          "him",
+          "Eh, tengok sana — paparan bunga tu. Macam ada sesuatu untuk awak…"
+        ]
+      ],
+      "bouquet": [
+        [
+          "him",
+          "Saya tahu awak suka bunga."
+        ],
+        [
+          "him",
+          "Jadi, ini bunga pertama daripada saya untuk awak."
+        ],
+        [
+          "him",
+          "Kalau boleh, saya nak bagi awak satu taman penuh dengan bunga."
+        ]
+      ],
+      "castleReveal": [
+        [
+          "him",
+          "Princess, saya ada satu lagi hadiah untuk awak."
+        ],
+        [
+          "him",
+          "Saya rasa seorang princess perlukan istana sendiri."
+        ],
+        [
+          "him",
+          "Jadi, mulai hari ini, istana ini milik awak."
+        ],
+        [
+          "him",
+          "Welcome home, my princess."
+        ]
+      ],
+      "castleFirstEnter": [
+        [
+          "him",
+          "Selamat pulang, tuan puteri. Macam mana? Cantik tak rumah awak? 🥹"
+        ],
+        [
+          "him",
+          "Bunga tadi saya letak dalam pasu diraja ni ya, supaya dia sentiasa segar."
+        ],
+        [
+          "him",
+          "Eh… saya rasa ada sesuatu kat bilik tidur awak. Sebelah kanan sana. Pergilah tengok."
+        ]
+      ],
+      "afterLetter": [
+        [
+          "him",
+          "…Awak dah baca? Hehe. Jangan pandang saya macam tu, saya malu."
+        ],
+        [
+          "him",
+          "Okay, okay. Sekarang seluruh kerajaan ni dah terbuka untuk awak."
+        ],
+        [
+          "him",
+          "Taman bunga, perpustakaan, bilik cermin, mahkamah, taman kanak-kanak… dan hutan. Hutan tu nanti saya teman."
+        ],
+        [
+          "him",
+          "Buka Jurnal kalau nak tengok misi. Jom, sayang — saya ikut je awak."
+        ]
+      ],
+      "gardenFlowersEnough": [
+        [
+          "him",
+          "Tengok… tangan awak penuh bunga. Tapi still, bunga-bunga tu kalah cantik dengan awak."
+        ]
+      ],
+      "gardenComplete": [
+        [
+          "him",
+          "Taman ni dah jadi lagi cantik sebab awak jaga dia."
+        ],
+        [
+          "him",
+          "Macam hidup saya. Jadi lagi indah sejak ada awak."
+        ]
+      ],
+      "mirrorAfter": [
+        [
+          "him",
+          "Rasanya cermin ni tak pernah menipu."
+        ],
+        [
+          "him",
+          "Saya setuju 100%. Eh, 1000%."
+        ]
+      ],
+      "libraryComplete": [
+        [
+          "him",
+          "Awak dah baca semua… Saya tulis buku-buku tu sambil senyum sorang-sorang tau."
+        ],
+        [
+          "him",
+          "Awak ni memang ulat buku. Tapi ulat buku yang paling comel dalam dunia."
+        ]
+      ],
+      "courtroomCongrats": [
+        [
+          "him",
+          "Tahniah, Puan Peguam! Hujah awak tadi — fuh, saya pun rasa nak tepuk meja."
+        ],
+        [
+          "him",
+          "Satu hari nanti bukan mahkamah olok-olok lagi. Mahkamah betul. Dan saya akan duduk depan sekali."
+        ]
+      ],
+      "childrenComplete": [
+        [
+          "him",
+          "Tengok muka Momo tu… happy gila. Awak memang pandai dengan budak-budak."
+        ],
+        [
+          "him",
+          "Hati awak ni lembut sangat, sayang. Sebab tu semua orang rasa selamat dekat awak."
+        ]
+      ],
+      "stormComfort": [
+        [
+          "him",
+          "Eh, sayang... kenapa jalan seorang diri dalam hujan macam ni?"
+        ],
+        [
+          "him",
+          "Takut petir ke?"
+        ],
+        [
+          "him",
+          "Come here."
+        ],
+        [
+          "him",
+          "Tak apa, ada saya."
+        ],
+        [
+          "him",
+          "Kalau bunyi petir buat awak takut, awak boleh pegang tangan saya."
+        ],
+        [
+          "him",
+          "Kita tak perlu lawan ribut ni seorang-seorang."
+        ],
+        [
+          "him",
+          "Selagi saya ada, awak tak perlu rasa keseorangan."
+        ]
+      ],
+      "stormAfter": [
+        [
+          "him",
+          "Tengok tu… pelangi. Ribut mesti berlalu, sayang. Dan saya tak ke mana-mana."
+        ]
+      ],
+      "hillUnlocked": [
+        [
+          "him",
+          "Sayang… awak dah siapkan semuanya. Saya bangga sangat dengan awak."
+        ],
+        [
+          "him",
+          "Jambatan ke Bukit Bunga Api dah terbuka. Jom, ikut saya ke selatan. Ada sesuatu yang saya simpan untuk malam ni."
+        ]
+      ],
+      "finaleArrive": [
+        [
+          "him",
+          "Duduk sini dengan saya kejap. Tengok langit tu…"
+        ]
+      ],
+      "finaleAfter": [
+        [
+          "him",
+          "Happy birthday, sayang. Dari hati saya yang paling dalam."
+        ],
+        [
+          "him",
+          "Eh… tapi sebelum awak tidur malam ni, ada satu lagi kejutan. Yang terakhir. Saya janji."
+        ]
+      ],
+      "secretUnlocked": [
+        [
+          "him",
+          "Balik ke istana, sayang. Pintu misteri dekat dewan — sebelah kiri — dah terbuka untuk awak."
+        ]
+      ],
+      "secretEnter": [
+        [
+          "him",
+          "Ni bilik yang saya paling lama siapkan."
+        ],
+        [
+          "him",
+          "Dua kerusi. Satu untuk awak, satu untuk saya. Sebab apa pun yang jadi, saya nak duduk sebelah awak."
+        ]
+      ],
+      "afterFinalLetter": [
+        [
+          "him",
+          "Terima kasih sebab main sampai habis, sayang."
+        ],
+        [
+          "him",
+          "Dunia ni akan sentiasa ada di sini. Bila-bila awak rindu, datanglah. Saya tunggu."
+        ]
+      ],
+      "strawberryIntro": [
+        [
+          "him",
+          "Princess, saya jumpa satu sudut kecil dalam taman ni yang saya rasa awak akan suka."
+        ],
+        [
+          "narrator",
+          "Di sebalik gazebo hijau, batas-batas strawberry merah ranum menanti — manis, segar, dan berkilau disinari matahari."
+        ],
+        [
+          "her",
+          "Strawberry! Banyaknya…"
+        ],
+        [
+          "him",
+          "Awak kutip strawberry tu satu-satu ya. Saya teman awak. Jangan risau, saya takkan ke mana-mana."
+        ]
+      ],
+      "strawberryComplete": [
+        [
+          "him",
+          "Look at that! Lima-lima dah cukup. Tapi rasanya ada satu lagi benda yang lebih manis dekat sini."
+        ]
+      ],
+      "picnic": [
+        [
+          "him",
+          "Penat juga kita kutip strawberry tadi, kan, princess?"
+        ],
+        [
+          "him",
+          "Jom duduk sekejap. Hari ni kita tak perlu kejar apa-apa. Saya cuma nak luangkan masa dengan awak."
+        ],
+        [
+          "him",
+          "Awak nak strawberry yang mana? Saya bagi awak pilih dulu."
+        ]
+      ],
+      "picnicReplyBiggest": [
+        [
+          "him",
+          "Yang paling besar untuk tuan puteri, mestilah. Yang kecil-kecil ni untuk saya. Hehe."
+        ]
+      ],
+      "picnicReplyShare": [
+        [
+          "him",
+          "Kita kongsi? Okay. Separuh untuk awak, separuh untuk saya… tapi separuh awak lagi besar."
+        ]
+      ],
+      "picnicReplyFeed": [
+        [
+          "him",
+          "Sini, saya suapkan. Aaa~ … Manis tak? Saya tahu. Sebab awak yang makan."
+        ]
+      ],
+      "picnicEnd": [
+        [
+          "him",
+          "Bila-bila awak nak rehat, gazebo ni sentiasa ada. Saya pun."
+        ]
+      ],
+      "cakeReveal": [
+        [
+          "him",
+          "Princess {HER_NAME}... perjalanan awak dalam kerajaan kecil ni dah sampai ke penghujung."
+        ],
+        [
+          "him",
+          "Tapi saya masih ada satu perkara yang paling penting untuk kita raikan."
+        ],
+        [
+          "him",
+          "Happy Birthday, my princess."
+        ],
+        [
+          "him",
+          "Semoga setiap impian awak menjadi kenyataan. Saya doakan awak sentiasa bahagia, bukan hari ini sahaja, tapi setiap hari."
+        ],
+        [
+          "him",
+          "Now close your eyes, make a wish, and blow your candles."
+        ]
+      ],
+      "afterCandles": [
+        [
+          "him",
+          "Yeay! Selamat hari lahir, sayang! Tengok luar tingkap tu — langit pun meraikan awak."
+        ],
+        [
+          "him",
+          "Surat atas meja tu… untuk awak. Bacalah perlahan-lahan."
+        ]
+      ]
+    },
+    "children": {
+      "momoIntro": [
+        [
+          "momo",
+          "Huhu… huhu… *teresak*"
+        ],
+        [
+          "her",
+          "Eh, kenapa ni sayang? Kenapa menangis?"
+        ],
+        [
+          "momo",
+          "Bintang… Bintang plush Momo hilang… Momo main tadi, lepas tu angin tiup kuat sangat… 😢"
+        ],
+        [
+          "her",
+          "Jangan risau, Momo. Kakak tolong carikan ya."
+        ],
+        [
+          "momo",
+          "Betul ke?! Kakak Princess baik sangat!"
+        ],
+        [
+          "him",
+          "Tengok tu, budak-budak terus sayang awak. Jom kita cari petunjuk dekat taman permainan ni."
+        ]
+      ],
+      "momoWaiting": [
+        [
+          "momo",
+          "Kakak dah jumpa Bintang Momo? Momo tunggu sini tau…"
+        ]
+      ],
+      "momoNeedsClues": [
+        [
+          "momo",
+          "Angin tiup ke arah buaian… lepas tu Momo tak nampak dah."
+        ]
+      ],
+      "momoReturn": [
+        [
+          "her",
+          "Momo, tengok apa kakak jumpa!"
+        ],
+        [
+          "momo",
+          "BINTANG!!! Bintang Momo dah balik! Terima kasih kakak Princess! 💖"
+        ],
+        [
+          "momo",
+          "Nah, Momo bagi lencana ni. Lencana untuk orang yang paling baik hati!"
+        ]
+      ],
+      "momoAfter": [
+        [
+          "momo",
+          "Momo sayang kakak Princess! Datang main lagi tau!"
+        ]
+      ],
+      "clue_sandbox": "Ada kesan tapak kaki kecil Momo di dalam pasir… dan seutas benang reben berkilau, terbang ke arah buaian.",
+      "clue_swing": "Pada rantai buaian tersangkut sehelai reben bintang. Angin dari sini bertiup ke arah pokok besar di barat daya taman.",
+      "clue_story": "Cik Arnab berbisik: \"Masa angin kuat tadi, Arnab nampak sesuatu berkilau melayang… dan masuk ke dalam lubang pokok tua!\"",
+      "tree_noClues": "Pokok tua ni ada lubang besar… tapi gelap sangat. Mungkin cari petunjuk lain dulu?",
+      "tree_found": "Dalam lubang pokok tua, ada sesuatu berkilau… Bintang plush Momo! Bersih dan selamat.",
+      "ball": [
+        "Bola melantun jauh! Hehe.",
+        "Gol! Princess memang ada bakat.",
+        "Boing! Bola tu suka awak."
+      ],
+      "xylophone": [
+        "Do-re-mi~ ♪",
+        "Melodi comel bergema di taman.",
+        "♪ Ting-ting-ting ♪"
+      ]
+    },
+    "storm": {
+      "brewing": [
+        [
+          "him",
+          "Eh… langit makin gelap. Sayang, rapat sikit dengan saya."
+        ]
+      ],
+      "separated": [
+        [
+          "narrator",
+          "Kabus tebal tiba-tiba menyelubungi hutan. Angin bertiup kencang…"
+        ],
+        [
+          "narrator",
+          "Bila kabus sedikit reda, dia sudah tiada di sisi awak."
+        ]
+      ],
+      "calls": [
+        "Sayang? Awak kat mana? Saya kat sini!",
+        "Ikut cahaya, sayang… saya tunggu!",
+        "Jangan takut, saya dekat je ni!",
+        "Sayang, saya tak ke mana-mana. Cari saya ya?"
+      ],
+      "clues": {
+        "storm_umbrella": "Sebuah payung merah jambu. Ia boleh melindungi awak daripada hujan… tetapi bukan daripada rasa takut.",
+        "storm_lantern": "Tanglung ajaib menyala lembut. Cahayanya condong ke arah barat — seolah-olah menunjukkan jalan kepada seseorang.",
+        "storm_shelter": "Sebuah pondok kecil. Ia kering dan tenang… tapi entah kenapa, ia terasa kosong tanpa seseorang di sisi.",
+        "storm_crystal": "Kristal bercahaya berbisik: \"Tempat paling selamat bukan dibina daripada kayu atau batu…\""
+      }
+    },
+    "courtroom": {
+      "caseTitle": "Kes Kek Hari Jadi Yang Hilang",
+      "caseIntro": "Kek hari jadi diraja hilang dari dapur istana petang semalam. Encik Arnab, pembantu tukang roti, dituduh mencurinya kerana dia orang terakhir yang dilihat di dapur.",
+      "judgeIntro": [
+        [
+          "judge",
+          "Hoo-hoo! Mahkamah dibuka. Kes Kek Hari Jadi Yang Hilang."
+        ],
+        [
+          "judge",
+          "Puan Peguam, sila periksa semua bukti sebelum membuat keputusan. Keadilan memerlukan kesabaran."
+        ]
+      ],
+      "needClues": [
+        [
+          "judge",
+          "Hoo… masih ada bukti yang belum diperiksa. Seorang peguam yang baik meneliti semuanya dahulu."
+        ]
+      ],
+      "clues": {
+        "clue_footprints": {
+          "title": "Bukti A: Kesan Tapak",
+          "text": "Kesan tapak di lantai dapur berbentuk kuku belah — bukan tapak kaki arnab. Ada serbuk kek dan sehelai bulu putih kerinting di sebelahnya."
+        },
+        "clue_witness": {
+          "title": "Bukti B: Kenyataan Saksi",
+          "text": "Tukang kebun bersumpah dia nampak Encik Arnab di pasar membeli tepung pada jam 3 petang — waktu kek hilang."
+        },
+        "clue_log": {
+          "title": "Bukti C: Buku Log Dapur",
+          "text": "\"3:05 petang — Tingkap dapur dibiarkan terbuka. Kambing Comel dari ladang diraja dilihat berkeliaran berhampiran tingkap.\""
+        }
+      },
+      "q1": {
+        "question": "Berdasarkan bukti, siapakah yang mengambil kek itu?",
+        "options": [
+          {
+            "id": "arnab",
+            "label": "Encik Arnab — dia orang terakhir di dapur",
+            "correct": false,
+            "feedback": "Hmm… tapi saksi nampak Encik Arnab di pasar pada waktu kejadian, dan tapaknya bukan tapak arnab. Cuba lihat bukti semula."
+          },
+          {
+            "id": "kambing",
+            "label": "Kambing Comel — masuk melalui tingkap terbuka",
+            "correct": true,
+            "feedback": "Tepat! Tapak kuku belah, bulu kerinting dan log tingkap terbuka semuanya menunjuk kepada Kambing Comel."
+          },
+          {
+            "id": "kebun",
+            "label": "Tukang kebun — dia yang memberi kenyataan",
+            "correct": false,
+            "feedback": "Tiada bukti yang mengaitkan tukang kebun. Menuduh tanpa bukti tidak adil, Puan Peguam."
+          }
+        ]
+      },
+      "q2": {
+        "question": "Apakah keputusan yang paling adil?",
+        "options": [
+          {
+            "id": "harsh",
+            "label": "Hukum berat Kambing Comel supaya serik",
+            "correct": false,
+            "feedback": "Kambing Comel cuma lapar dan tidak faham. Keadilan bukan tentang menghukum seberat-beratnya."
+          },
+          {
+            "id": "fair",
+            "label": "Bebaskan Encik Arnab, tutup tingkap dapur, dan sediakan makanan untuk Kambing Comel",
+            "correct": true,
+            "feedback": "Keputusan yang bijaksana! Yang tidak bersalah dibebaskan, punca masalah diselesaikan, dan semua dilayan dengan belas kasihan."
+          },
+          {
+            "id": "everyone",
+            "label": "Denda semua orang yang ada di istana",
+            "correct": false,
+            "feedback": "Menghukum semua orang bermakna menghukum yang tidak bersalah. Cuba lagi."
+          }
+        ]
+      },
+      "verdictJudge": [
+        [
+          "judge",
+          "Hoo-hoo! Mahkamah bersetuju sepenuhnya dengan Puan Peguam."
+        ],
+        [
+          "judge",
+          "Encik Arnab dibebaskan. Tingkap dapur akan ditutup. Dan Kambing Comel… akan dapat kek kecilnya sendiri."
+        ],
+        [
+          "judge",
+          "Kes ditutup! Tahniah atas hujah yang adil dan penuh belas kasihan."
+        ]
+      ]
+    },
+    "objects": {
+      "lipstick": [
+        "Gincu warna rose nude. Tak payah pakai pun dah cantik, tapi kalau pakai… habislah saya. 😳",
+        "Warna ni sesuai sangat dengan awak."
+      ],
+      "perfume": [
+        "Bau mawar dan vanila… macam bau hari bahagia.",
+        "Saya selalu ingat bau wangi awak. Serius."
+      ],
+      "throne": [
+        "Tuan Puteri bersemayam di singgahsana! Patik menjunjung titah. 🙇",
+        "Sesuai sangat awak duduk situ. Macam memang dicipta untuk awak."
+      ],
+      "musicBox": [
+        "♪ Kotak muzik memainkan melodi lembut… ♪",
+        "Lagu ni saya pilih sebab ia mengingatkan saya pada senyuman awak."
+      ],
+      "vase": [
+        "Bunga pertama awak, segar dalam pasu diraja.",
+        "Bunga ni takkan layu dalam dunia ni. Macam sayang saya."
+      ],
+      "wishFountain": [
+        "Awak buat hajat apa tu? Rahsia ke? Hehe. Saya pun ada hajat — semoga hajat awak semua tercapai.",
+        "Air pancut ni simpan semua doa baik untuk awak."
+      ],
+      "seedsGet": "Awak dapat 3 Benih Ajaib! Tanam di petak tanah berhampiran.",
+      "seedsAlready": "Bakul benih ni dah kosong — benih ajaib ada dengan awak.",
+      "canGet": "Awak dapat Penyiram Emas! Siram benih yang dah ditanam.",
+      "plotNeedSeed": "Petak tanah yang subur. Perlukan Benih Ajaib — ada dalam bakul dekat bangsal.",
+      "plotPlanted": "Benih ditanam! Sekarang perlukan air…",
+      "plotNeedWater": "Benih ni dahaga. Perlukan Penyiram Emas — dekat air pancut taman.",
+      "lookoutReplay": "Nak tengok bunga api sekali lagi?",
+      "castleDoorLocked": "Pintu istana masih tertutup…",
+      "secretDoorLocked": "Sebuah pintu misteri, berukir bunga dan bintang. Terkunci rapat… seolah-olah menunggu masa yang sesuai.",
+      "giftAlready": "Hadiah istimewa awak. 🎁",
+      "strawberryNotYet": "Strawberry ni belum masak sepenuhnya. Cari yang merah ranum dan bersinar.",
+      "picnicLocked": "Gazebo yang cantik… Kutip lima strawberry ranum dulu, nanti kita berkelah di sini.",
+      "cakeAfter": [
+        "Kek ni cantik kan? Macam awak. Manis pun macam awak.",
+        "Lilin dah padam, tapi hajat awak tetap menyala. 🤍"
+      ]
+    },
+    "gates": {
+      "castleGate": "Gerbang istana dikunci oleh sihir lembut. Mungkin… selepas menerima hadiah pertama?",
+      "world": "Pagar mawar ajaib masih tertutup. Ia akan terbuka selepas awak baca sesuatu yang penting di istana.",
+      "hillBridge": "Jambatan ke Bukit Bunga Api masih dikunci cahaya bintang. Selesaikan semua pengembaraan dulu."
+    },
+    "barks": {
+      "courtyard": [
+        "Dataran ni saya hias khas untuk hari awak.",
+        "Awak jalan pun nampak macam puteri betul. Eh, memang puteri pun."
+      ],
+      "castleGrounds": [
+        "Air pancut tu cantik, tapi awak lagi cantik. Sorry, terkeluar.",
+        "Istana awak ni, sayang. Selamanya."
+      ],
+      "garden": [
+        "Tengok mawar tu… merah jambu, macam pipi awak bila malu.",
+        "Bunga matahari tu asyik pandang awak. Saya faham perasaan dia.",
+        "Awak suka tulip ke mawar? Saya suka… awak. Hehe.",
+        "Bau taman ni wangi. Tapi bau awak lagi saya ingat.",
+        "Kalau awak jadi bunga, saya nak jadi tukang kebun. Supaya boleh jaga awak hari-hari."
+      ],
+      "mirror": [
+        "Cermin tu bertuah sebab dapat tengok awak lama-lama.",
+        "Awak tak payah touch-up pun dah cantik, tau tak?"
+      ],
+      "library": [
+        "Awak baca, saya tunggu sini. Saya suka tengok awak khusyuk baca.",
+        "Kalau awak hilang dalam buku, saya tunggu sampai awak jumpa jalan balik.",
+        "Senyap-senyap, perpustakaan… tapi hati saya bising bila dekat awak."
+      ],
+      "courtroom": [
+        "Bakal Puan Peguam dah sampai! Semua bangun, hormat!",
+        "Awak nampak serius bila fikir. Comel."
+      ],
+      "children": [
+        "Comelnya makhluk-makhluk kecil ni. Tapi awak lagi comel.",
+        "Budak-budak memang suka awak, kan? Saya tak hairan."
+      ],
+      "storm": [
+        "Rapat dengan saya, sayang. Saya ada.",
+        "Petir tu bising je, dia tak boleh buat apa-apa kat awak."
+      ],
+      "fireworks": [
+        "Cantik kan langit malam ni?",
+        "Saya nak ingat malam ni selama-lamanya."
+      ],
+      "paths": [
+        "Jalan perlahan-lahan pun tak apa. Saya suka jalan dengan awak.",
+        "Penat tak, sayang? Nak berhenti kejap?",
+        "Kalau awak sesat, ikut je saya. Eh, saya pun ikut awak."
+      ],
+      "castleHall": [
+        "Ni rumah awak, sayang. Rehatlah dulu kalau penat.",
+        "Dewan ni besar, tapi rasa penuh bila awak ada."
+      ],
+      "bedroom": [
+        "Bilik tidur puteri. Saya pilih warna lembut sebab nak awak tidur lena."
+      ],
+      "secretRoom": [
+        "Bilik ni… untuk kita berdua je."
+      ],
+      "strawberryGarden": [
+        "Merahnya strawberry tu… tapi pipi awak lagi merah bila malu.",
+        "Hijau sage ni warna kegemaran awak, kan? Saya ingat.",
+        "Kalau penat, kita rehat dekat gazebo tu nanti."
+      ]
+    },
+    "arrivals": {
+      "garden": "Selamat datang ke Taman Impian! Kutip bunga, tanam benih, dan… ada nota rahsia yang saya sorok. Cari tau!",
+      "mirror": "Bilik Cermin Diraja. Cuba tanya cermin besar tu satu soalan…",
+      "library": "Perpustakaan Impian. Ada empat buku bercahaya — saya tulis semuanya untuk awak.",
+      "courtroom": "Mahkamah Diraja! Ada kes yang perlukan peguam bijak. Saya kenal sorang… awak la tu.",
+      "children": "Taman Kanak-kanak! Eh, ada makhluk kecil menangis kat sana tu…",
+      "storm": "Hutan ni… nampak lain sikit. Sayang, jangan jauh dari saya ya.",
+      "fireworks": "Bukit Bunga Api. Naik sampai ke puncak, sayang.",
+      "castleGrounds": "Ni halaman istana awak. Cantik tak?",
+      "strawberryGarden": "Taman Strawberry! Sudut kecil ni saya tanam khas untuk awak."
+    },
+    "sitLines": [
+      "Saya duduk sini kejap ya. Teman awak.",
+      "Rehat dulu, sayang. Tak payah rush.",
+      "Best kan duduk diam-diam macam ni?"
+    ],
+    "recoveryLines": [
+      "Tunggu saya, sayang! Hehe, laju betul awak jalan.",
+      "Eh, saya tertinggal! Tunggu~",
+      "Fuh, sempat jugak kejar."
+    ],
+    "talk": {
+      "firstEver": "Eh, nak borak dengan saya? Suka! Tanya je apa-apa.",
+      "greetings": [
+        "Ya, sayang? Saya dengar.",
+        "Hm? Rindu saya ke? Hehe.",
+        "Panggil saya? Saya memang dah tunggu.",
+        "Ada apa, tuan puteri? Patik sedia berkhidmat.",
+        "Hai cantik. Eh, maksud saya — hai sayang."
+      ],
+      "greetingsRepeat": [
+        "Baru je tadi borak, dah rindu lagi? Saya pun sama.",
+        "Awak ni suka sangat borak dengan saya kan. Saya tak kisah, saya suka.",
+        "Lagi? Okay! Saya tak pernah bosan dengan awak."
+      ],
+      "greetingByLocation": {
+        "library": "Shh… kita dalam perpustakaan. *bisik* Ya sayang?",
+        "storm": "Saya ada sini, sayang. Pegang tangan saya kalau takut.",
+        "fireworks": "Hm? Nak cakap apa, sambil tengok langit?",
+        "secretRoom": "Ya, sayang… bilik ni untuk kita."
+      },
+      "choices": {
+        "hint": "Apa kita patut buat sekarang?",
+        "place": "Cerita pasal tempat ni",
+        "manja": "Manja sikit 🥺",
+        "memory": "Ingat tak…?",
+        "chat": "Sembang bebas",
+        "bye": "Okay, jom!"
+      },
+      "hintPrefix": [
+        "Hmm, rasanya…",
+        "Kalau saya jadi awak…",
+        "Cadangan saya:"
+      ],
+      "allDone": "Semua dah siap, sayang. Sekarang kita boleh jalan-jalan je. Saya suka.",
+      "place": {
+        "courtyard": [
+          "Dataran Pertabalan. Kat sini awak ditabalkan jadi Princess. Hari bersejarah!"
+        ],
+        "castleGrounds": [
+          "Halaman istana. Air pancut tu saya letak sebab bunyi air menenangkan.",
+          "Menara-menara tu warna pink dan ivory. Ikut citarasa awak."
+        ],
+        "garden": [
+          "Taman ni ada mawar merah jambu, mawar putih, tulip, bunga matahari, hydrangea dan sakura. Semua kegemaran awak.",
+          "Bangku tu — satu hari nanti kita duduk sana lama-lama ya."
+        ],
+        "mirror": [
+          "Bilik solek diraja. Gincu, minyak wangi, berus… semua untuk awak. Walaupun awak tak perlukan pun."
+        ],
+        "library": [
+          "Perpustakaan ni untuk ulat buku kesayangan saya. Buku terapung tu — magic, jangan tanya macam mana. Hehe."
+        ],
+        "courtroom": [
+          "Mahkamah ni untuk bakal peguam. Satu hari nanti, awak akan berdiri di mahkamah betul. Saya yakin."
+        ],
+        "children": [
+          "Taman kanak-kanak. Saya tahu awak sayang budak-budak. Hati awak memang lembut."
+        ],
+        "storm": [
+          "Hutan ni gelap sikit. Tapi selagi saya ada, tak ada apa yang perlu ditakutkan."
+        ],
+        "fireworks": [
+          "Bukit ni menghadap seluruh kerajaan. Dari sini, semua yang kita lalui nampak kecil… kecuali awak."
+        ],
+        "paths": [
+          "Laluan diraja. Setiap jalan dalam dunia ni akhirnya bawa balik ke awak."
+        ],
+        "castleHall": [
+          "Dewan Besar. Singgahsana tu untuk awak. Cubalah duduk!",
+          "Kotak muzik dekat sana tu — cuba main."
+        ],
+        "bedroom": [
+          "Bilik tidur awak. Katil tu empuk, saya dah test. Eh, sikit je."
+        ],
+        "secretRoom": [
+          "Bilik rahsia. Saya bina paling akhir, tapi rancang paling awal."
+        ],
+        "strawberryGarden": [
+          "Taman Strawberry, dengan gazebo hijau sage. Warna kegemaran awak, dan buah kegemaran awak."
+        ]
+      },
+      "manja": [
+        "Sayang… pandang saya kejap. Okay, dah. Saya cuma nak tengok muka awak.",
+        "Awak tahu tak, awak ni punca saya senyum sorang-sorang macam orang gila?",
+        "Kalau awak penat, sandar kat bahu saya. Free, tak payah bayar.",
+        "Saya clingy sikit hari ni. Sebab hari jadi awak. Esok pun clingy jugak. Lusa pun.",
+        "Jangan jauh-jauh tau. Nanti saya rindu.",
+        "Awak comel sangat sampai saya lupa nak cakap apa tadi.",
+        "Kalau sayang saya ada bar, dah lama penuh. Dah overflow.",
+        "Nak dengar rahsia? Saya sayang awak. Okay, bukan rahsia pun.",
+        "Hari ni awak dah makan? Minum air? Jangan lupa jaga diri, princess saya.",
+        "Saya tak pandai bermadah, tapi saya pandai sayang awak."
+      ],
+      "noMoreMemories": "Kenangan yang paling saya nak? Yang kita akan cipta lepas ni. Sama-sama.",
+      "goodbye": [
+        "Okay, jom! Saya ikut belakang.",
+        "Lead the way, princess!",
+        "Jom! Jangan laju sangat, nanti saya tertinggal. Hehe."
+      ],
+      "reactions": {
+        "garden": "Taman tu dah mekar sebab awak. Saya tak pernah tengok bunga secantik tu.",
+        "mirror": "Lepas cermin tu cakap benda betul, saya rasa nak bagi dia anugerah.",
+        "library": "Buku-buku tu… saya harap awak suka. Saya tulis dengan sepenuh hati.",
+        "courtroom": "Saya masih terfikir hujah awak kat mahkamah tadi. Bijak gila!",
+        "children": "Momo asyik cerita pasal kakak Princess. Awak dah ada peminat setia.",
+        "storm": "Ribut tadi… awak okay? Saya ada je. Sentiasa.",
+        "finale": "Malam tadi… bunga api tu… saya takkan lupa."
+      }
+    },
+    "freeChat": {
+      "intro": "Taip apa-apa je, sayang. Saya dengar.",
+      "rules": [
+        {
+          "match": [
+            "sayang",
+            "love",
+            "cinta",
+            "luv"
+          ],
+          "replies": [
+            "Saya sayang awak lagi. Lagi banyak. Tak boleh lawan.",
+            "Love you too, princess. Selamanya."
+          ]
+        },
+        {
+          "match": [
+            "rindu",
+            "miss"
+          ],
+          "replies": [
+            "Saya pun rindu awak. Padahal awak ada depan mata.",
+            "Rindu tu tanda sayang. Jadi saya sayang awak banyak gila."
+          ]
+        },
+        {
+          "match": [
+            "takut",
+            "scared",
+            "risau",
+            "cemas"
+          ],
+          "replies": [
+            "Tak apa, ada saya. Kita hadap sama-sama.",
+            "Tarik nafas dalam-dalam. Saya kat sini, tak ke mana."
+          ]
+        },
+        {
+          "match": [
+            "penat",
+            "letih",
+            "tired",
+            "stress"
+          ],
+          "replies": [
+            "Rehat dulu, sayang. Awak dah buat yang terbaik.",
+            "Penat tu tanda awak berusaha. Saya bangga dengan awak."
+          ]
+        },
+        {
+          "match": [
+            "lapar",
+            "makan",
+            "hungry"
+          ],
+          "replies": [
+            "Jom makan! Saya belanja. Dalam dunia ni semua free, hehe.",
+            "Awak dah makan belum? Jangan skip makan tau."
+          ]
+        },
+        {
+          "match": [
+            "peguam",
+            "law",
+            "lawyer",
+            "exam",
+            "study",
+            "belajar"
+          ],
+          "replies": [
+            "Awak akan jadi peguam yang hebat. Saya yakin 100%.",
+            "Belajar elok-elok. Bila penat, ingat ada orang yang paling bangga dengan awak."
+          ]
+        },
+        {
+          "match": [
+            "cantik",
+            "lawa",
+            "pretty",
+            "beautiful"
+          ],
+          "replies": [
+            "Awak? Cantik. Itu fakta, bukan pendapat.",
+            "Cermin pun setuju dengan saya. Awak paling cantik."
+          ]
+        },
+        {
+          "match": [
+            "terima kasih",
+            "thank",
+            "tq"
+          ],
+          "replies": [
+            "Sama-sama, sayang. Semua ni untuk awak.",
+            "Tak payah terima kasih. Senyuman awak dah cukup."
+          ]
+        },
+        {
+          "match": [
+            "bunga",
+            "flower"
+          ],
+          "replies": [
+            "Kalau boleh, saya nak bagi awak satu taman penuh dengan bunga. Eh, dah bagi pun!"
+          ]
+        },
+        {
+          "match": [
+            "buku",
+            "book",
+            "baca"
+          ],
+          "replies": [
+            "Ulat buku kesayangan saya. Nanti kita pergi kedai buku sama-sama ya."
+          ]
+        },
+        {
+          "match": [
+            "marah",
+            "merajuk",
+            "sedih",
+            "sad"
+          ],
+          "replies": [
+            "Alololo… sini, cerita kat saya. Saya dengar.",
+            "Kalau saya buat salah, sorry ya sayang. Saya nak awak happy."
+          ]
+        },
+        {
+          "match": [
+            "hari jadi",
+            "birthday",
+            "besday"
+          ],
+          "replies": [
+            "Selamat hari lahir, sayang! Semoga panjang umur, murah rezeki, dan sentiasa bahagia."
+          ]
+        },
+        {
+          "match": [
+            "assalamualaikum",
+            "salam"
+          ],
+          "replies": [
+            "Waalaikumussalam, sayang. 🤍"
+          ]
+        },
+        {
+          "match": [
+            "hai",
+            "hi",
+            "hello",
+            "helo"
+          ],
+          "replies": [
+            "Hai cantik! Ada apa?",
+            "Hello princess! Rindu ke?"
+          ]
+        },
+        {
+          "match": [
+            "kahwin",
+            "nikah",
+            "marry"
+          ],
+          "replies": [
+            "Hehe… insyaAllah. Doakan yang terbaik untuk kita ya."
+          ]
+        },
+        {
+          "match": [
+            "budak",
+            "kanak",
+            "kids",
+            "children"
+          ],
+          "replies": [
+            "Awak memang pandai dengan budak-budak. Hati awak lembut sangat."
+          ]
+        }
+      ],
+      "fallback": [
+        "Hmm, saya tak berapa faham, tapi saya suka dengar suara awak. Eh, tulisan awak.",
+        "Betul tu sayang. Apa-apa pun, saya setuju dengan awak. Hehe.",
+        "Cerita lagi, saya suka dengar.",
+        "Awak ni ada-ada je. Comel."
+      ],
+      "aiUnavailable": "(Sambungan AI tak dapat dicapai — saya guna hati sendiri je ya.)"
+    }
+  },
+  "quests": [
+    {
+      "id": "coronation",
+      "chapter": "Bab 1",
+      "name": "Pertabalan Diraja",
+      "description": "Sebuah mahkota menanti di atas kusyen baldu. Setiap puteri layak diraikan.",
+      "hint": "Mahkota awak ada di atas kusyen baldu di tengah dataran tu.",
+      "objectives": [
+        {
+          "id": "crown",
+          "text": "Hampiri mahkota & terima mahkota anda",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "crown"
+      ]
+    },
+    {
+      "id": "bouquet",
+      "chapter": "Bab 2",
+      "name": "Hadiah Pertama",
+      "description": "Sejambak bunga istimewa sedang menunggu di paparan bunga.",
+      "hint": "Ada sesuatu untuk awak di paparan bunga sebelah kanan dataran.",
+      "objectives": [
+        {
+          "id": "bouquet",
+          "text": "Terima jambangan bunga anda",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "bouquet"
+      ]
+    },
+    {
+      "id": "castle",
+      "chapter": "Bab 3",
+      "name": "Istana Rahsia Diraja",
+      "description": "Gerbang ajaib telah terbuka. Sebuah istana menanti tuannya.",
+      "hint": "Istana awak di utara, sayang. Lalu gerbang emas tu.",
+      "objectives": [
+        {
+          "id": "reveal",
+          "text": "Saksikan gerbang istana terbuka",
+          "target": 1
+        },
+        {
+          "id": "enter",
+          "text": "Masuk ke dalam istana anda",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "castleKey"
+      ]
+    },
+    {
+      "id": "letter",
+      "chapter": "Bab 4",
+      "name": "Surat Cinta",
+      "description": "Di bilik tidur puteri, sepucuk sampul bermeterai menanti di meja sisi katil.",
+      "hint": "Cuba tengok bilik tidur awak. Sebelah kanan dewan besar.",
+      "objectives": [
+        {
+          "id": "read",
+          "text": "Buka sampul di meja sisi katil",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "loveLetter"
+      ]
+    },
+    {
+      "id": "garden",
+      "chapter": "Pengembaraan",
+      "name": "Taman Impian",
+      "description": "Taman yang luas penuh bunga kegemaran awak — kutip, tanam, siram, dan temui rahsianya.",
+      "hint": "Taman bunga di timur. Ambil benih dekat bangsal, dan penyiram dekat air pancut.",
+      "objectives": [
+        {
+          "id": "flowers",
+          "text": "Kutip bunga ajaib",
+          "target": 10
+        },
+        {
+          "id": "bloom",
+          "text": "Tanam & siram benih ajaib",
+          "target": 3
+        },
+        {
+          "id": "notes",
+          "text": "Cari nota tersembunyi",
+          "target": 3
+        }
+      ],
+      "rewards": [
+        "roseCharm"
+      ]
+    },
+    {
+      "id": "mirror",
+      "chapter": "Pengembaraan",
+      "name": "Cermin Ajaib",
+      "description": "Di bilik solek diraja, ada sebuah cermin yang hanya bercakap benar.",
+      "hint": "Bilik Cermin di timur laut, utara taman bunga.",
+      "objectives": [
+        {
+          "id": "ask",
+          "text": "Bertanya kepada cermin ajaib",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "pearlMirror"
+      ]
+    },
+    {
+      "id": "library",
+      "chapter": "Pengembaraan",
+      "name": "Perpustakaan Impian",
+      "description": "Empat buku bercahaya menyimpan kisah yang ditulis khas untuk awak.",
+      "hint": "Perpustakaan di barat laut. Ada empat buku yang bercahaya.",
+      "objectives": [
+        {
+          "id": "books",
+          "text": "Baca buku-buku bercahaya",
+          "target": 4
+        }
+      ],
+      "rewards": [
+        "starBookmark"
+      ]
+    },
+    {
+      "id": "courtroom",
+      "chapter": "Pengembaraan",
+      "name": "Peguam Masa Depan",
+      "description": "Kes Kek Hari Jadi Yang Hilang memerlukan seorang peguam yang bijak dan adil.",
+      "hint": "Mahkamah di barat dataran. Periksa semua bukti dulu sebelum buat keputusan.",
+      "objectives": [
+        {
+          "id": "clues",
+          "text": "Periksa bukti di mahkamah",
+          "target": 3
+        },
+        {
+          "id": "verdict",
+          "text": "Buat keputusan yang adil di meja hakim",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "justiceBadge"
+      ]
+    },
+    {
+      "id": "children",
+      "chapter": "Pengembaraan",
+      "name": "Mainan Momo Yang Hilang",
+      "description": "Momo, makhluk kecil yang comel, kehilangan mainan kesayangannya.",
+      "hint": "Taman Kanak-kanak di tenggara. Momo nampak sedih tu…",
+      "objectives": [
+        {
+          "id": "talk",
+          "text": "Bercakap dengan Momo",
+          "target": 1
+        },
+        {
+          "id": "clues",
+          "text": "Cari petunjuk di taman permainan",
+          "target": 2
+        },
+        {
+          "id": "find",
+          "text": "Temui mainan Momo",
+          "target": 1
+        },
+        {
+          "id": "return",
+          "text": "Pulangkan mainan kepada Momo",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "kindnessBadge"
+      ]
+    },
+    {
+      "id": "storm",
+      "chapter": "Pengembaraan",
+      "name": "Finding My Shelter",
+      "description": "Hutan di barat daya diselubungi ribut. Cari tempat yang ribut tak mampu menakutkan awak.",
+      "hint": "Hutan di barat daya. Jangan risau, kalau hujan… saya ada.",
+      "objectives": [
+        {
+          "id": "enter",
+          "text": "Masuk ke Hutan Ribut",
+          "target": 1
+        },
+        {
+          "id": "clues",
+          "text": "Periksa petunjuk dalam hutan",
+          "target": 4
+        },
+        {
+          "id": "found",
+          "text": "Find a place where the storm cannot frighten you",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "rainbowCrystal"
+      ]
+    },
+    {
+      "id": "finale",
+      "chapter": "Kemuncak",
+      "name": "Bukit Bunga Api",
+      "description": "Di atas bukit yang menghadap seluruh kerajaan, langit malam sedang menunggu.",
+      "hint": "Jom ke bukit di selatan, seberang jambatan. Saya ada kejutan.",
+      "objectives": [
+        {
+          "id": "watch",
+          "text": "Naik ke puncak Bukit Bunga Api",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "starlightLocket"
+      ]
+    },
+    {
+      "id": "secret",
+      "chapter": "Penutup",
+      "name": "Bilik Rahsia",
+      "description": "Sebuah pintu misteri di dalam istana kini terbuka.",
+      "hint": "Balik ke istana, sayang. Pintu sebelah kiri dewan dah terbuka.",
+      "objectives": [
+        {
+          "id": "enter",
+          "text": "Masuk ke Bilik Rahsia di istana",
+          "target": 1
+        },
+        {
+          "id": "candles",
+          "text": "Buat hajat & tiup lilin kek hari jadi",
+          "target": 1
+        },
+        {
+          "id": "read",
+          "text": "Buka surat terakhir",
+          "target": 1
+        }
+      ],
+      "rewards": [
+        "finalLetter"
+      ]
+    },
+    {
+      "id": "memories",
+      "chapter": "Pilihan",
+      "name": "Bintang Kenangan",
+      "description": "Lapan bintang kecil tersembunyi di seluruh kerajaan. Setiap satu menyimpan kenangan kita.",
+      "hint": "Ada bintang-bintang kecil bersinar tersembunyi merata tempat. Cari tau!",
+      "objectives": [
+        {
+          "id": "stars",
+          "text": "Kumpul Bintang Kenangan",
+          "target": 8
+        }
+      ],
+      "rewards": []
+    },
+    {
+      "id": "strawberries",
+      "chapter": "Pilihan",
+      "name": "The Sweetest Little Harvest",
+      "description": "Di Taman Strawberry, lima biji strawberry merah ranum menanti tangan Princess untuk dikutip.",
+      "hint": "Taman Strawberry di timur laut Taman Impian — ikut laluan kecil dekat bangsal, ke gazebo hijau.",
+      "objectives": [
+        {
+          "id": "pick",
+          "text": "Find 5 ripe strawberries",
+          "target": 5
+        }
+      ],
+      "rewards": [
+        "strawberryBasket"
+      ]
+    }
+  ],
+  "items": {
+    "crown": {
+      "name": "Mahkota Rose-Gold",
+      "description": "Mahkota diraja bertatah permata merah jambu dan kristal. Milik Princess seorang sahaja.",
+      "icon": "crown"
+    },
+    "bouquet": {
+      "name": "Jambangan Bunga Pertama",
+      "description": "Mawar merah jambu, tulip putih dan bunga-bunga kecil berbalut reben.",
+      "icon": "flower"
+    },
+    "castleKey": {
+      "name": "Kunci Istana Diraja",
+      "description": "Istana ini milik awak. Selamanya.",
+      "icon": "key"
+    },
+    "loveLetter": {
+      "name": "Surat Cinta",
+      "description": "Sepucuk surat dari seseorang yang sayang awak sepenuh hati.",
+      "icon": "mail",
+      "readable": "loveLetter"
+    },
+    "seeds": {
+      "name": "Benih Ajaib",
+      "description": "Tanam di petak tanah taman, kemudian siram.",
+      "icon": "sprout"
+    },
+    "wateringCan": {
+      "name": "Penyiram Emas",
+      "description": "Untuk menyiram benih ajaib yang telah ditanam.",
+      "icon": "droplets"
+    },
+    "roseCharm": {
+      "name": "Azimat Mawar",
+      "description": "Ganjaran Taman Impian. Harum seperti hari yang bahagia.",
+      "icon": "flower2"
+    },
+    "pearlMirror": {
+      "name": "Cermin Mutiara",
+      "description": "Cermin kecil yang sentiasa mengingatkan awak betapa cantiknya awak.",
+      "icon": "sparkles"
+    },
+    "starBookmark": {
+      "name": "Penanda Buku Bintang",
+      "description": "Untuk setiap buku yang akan awak baca selepas ini.",
+      "icon": "bookmark"
+    },
+    "justiceBadge": {
+      "name": "Lencana Peguam Masa Depan",
+      "description": "Dianugerahkan kepada bakal peguam yang bijak dan adil.",
+      "icon": "scale"
+    },
+    "momoToy": {
+      "name": "Bintang Plush Momo",
+      "description": "Mainan kesayangan Momo. Perlu dipulangkan!",
+      "icon": "star"
+    },
+    "kindnessBadge": {
+      "name": "Lencana Hati Baik",
+      "description": "Untuk hati yang sabar dan lembut dengan kanak-kanak.",
+      "icon": "heart"
+    },
+    "rainbowCrystal": {
+      "name": "Kristal Pelangi",
+      "description": "Selepas ribut, sentiasa ada pelangi. Dan sentiasa ada saya.",
+      "icon": "gem"
+    },
+    "starlightLocket": {
+      "name": "Loket Cahaya Bintang",
+      "description": "Menyimpan cahaya bunga api malam hari lahir awak.",
+      "icon": "moon"
+    },
+    "finalLetter": {
+      "name": "Surat Terakhir",
+      "description": "Surat dari Bilik Rahsia.",
+      "icon": "scroll",
+      "readable": "finalLetter"
+    },
+    "strawberry": {
+      "name": "Strawberry Ranum",
+      "description": "Merah, manis dan dikutip sendiri oleh Princess di Taman Strawberry.",
+      "icon": "cherry"
+    },
+    "strawberryBasket": {
+      "name": "Bakul Strawberry",
+      "description": "Bakul kayu kecil penuh strawberry — dibawa ke piknik di gazebo hijau.",
+      "icon": "basket"
+    }
+  },
+  "locations": {
+    "courtyard": {
+      "name": "Dataran Pertabalan",
+      "english": "Coronation Courtyard",
+      "description": "Tempat awak ditabalkan sebagai Princess."
+    },
+    "castleGrounds": {
+      "name": "Istana Diraja",
+      "english": "Royal Castle",
+      "description": "Rumah awak. Selamanya."
+    },
+    "castleHall": {
+      "name": "Dewan Besar",
+      "english": "Grand Hall",
+      "description": "Singgahsana, kotak muzik dan jambangan pertama awak."
+    },
+    "bedroom": {
+      "name": "Kamar Puteri",
+      "english": "Princess's Bedroom",
+      "description": "Bilik tidur yang lembut dan tenang."
+    },
+    "secretRoom": {
+      "name": "Bilik Rahsia",
+      "english": "The Secret Room",
+      "description": "Kejutan terakhir."
+    },
+    "garden": {
+      "name": "Taman Impian",
+      "english": "Garden of Her Dreams",
+      "description": "Mawar, tulip, bunga matahari, hydrangea dan sakura."
+    },
+    "mirror": {
+      "name": "Bilik Cermin Ajaib",
+      "english": "Magical Mirror Room",
+      "description": "Cermin yang hanya bercakap benar."
+    },
+    "library": {
+      "name": "Perpustakaan Impian",
+      "english": "Dream Library",
+      "description": "Empat buku bercahaya untuk awak."
+    },
+    "courtroom": {
+      "name": "Mahkamah Diraja",
+      "english": "Future Lawyer Courtroom",
+      "description": "Kes Kek Hari Jadi Yang Hilang."
+    },
+    "children": {
+      "name": "Taman Kanak-kanak",
+      "english": "Children's Wonderland",
+      "description": "Momo perlukan bantuan awak."
+    },
+    "storm": {
+      "name": "Hutan Ribut",
+      "english": "Stormy Forest",
+      "description": "Finding My Shelter."
+    },
+    "fireworks": {
+      "name": "Bukit Bunga Api",
+      "english": "Fireworks Celebration Hill",
+      "description": "Malam yang meraikan kewujudan awak."
+    },
+    "strawberryGarden": {
+      "name": "Taman Strawberry",
+      "english": "Strawberry Garden",
+      "description": "Batas strawberry ranum dan gazebo hijau sage untuk berkelah."
+    },
+    "paths": {
+      "name": "Laluan Diraja",
+      "english": "Royal Pathways",
+      "description": "Jalan-jalan yang menghubungkan kerajaan."
+    }
+  }
+}
