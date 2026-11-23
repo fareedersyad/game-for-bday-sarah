@@ -1,0 +1,17 @@
+{
+  "name": "A World Made Just For Her",
+  "short_name": "Sarah's World",
+  "description": "A World Made Just For Her — The Princess & Her Royal Companion. A romantic fantasy birthday adventure.",
+  "lang": "ms",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#73845b",
+  "theme_color": "#ccd5ae",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -6,6 +6,7 @@ import { useSettings } from '../stores/settingsStore';
 import { useUI } from '../stores/uiStore';
 import { useWorld } from '../stores/worldStore';
 import { audio } from '../systems/AudioManager/audioEngine';
+import { musicBox } from '../systems/AudioManager/musicBoxPlayer';
 import { game } from '../systems/GameLoop/game';
 import { installKeyboard, onInteract, onPauseKey } from '../systems/input';
 import { runtime } from '../systems/runtime';
@@ -51,7 +52,7 @@ function boot() {
   window.addEventListener('pointerdown', unlock, { passive: true });
   window.addEventListener('keydown', unlock);
   // QA hook (used by the automated end-to-end test; harmless for players).
-  (window as unknown as Record<string, unknown>).__awmjfh = { game, runtime, ui: useUI, store: useGameStore, settings: useSettings, world: useWorld, story: storyDebug, save: saveManager, saveStatus: useSaveStatus };
+  (window as unknown as Record<string, unknown>).__awmjfh = { game, runtime, ui: useUI, store: useGameStore, settings: useSettings, world: useWorld, story: storyDebug, save: saveManager, saveStatus: useSaveStatus, musicBox, audio };
 }
 
 export function GameRoot() {

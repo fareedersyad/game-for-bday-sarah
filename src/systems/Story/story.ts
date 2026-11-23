@@ -14,6 +14,7 @@ import { damp, dirToYaw } from '../../utils/math';
 import { fill, fmt } from '../../utils/text';
 import { audio } from '../AudioManager/audioEngine';
 import { pinMusic } from '../AudioManager/audioDirector';
+import { musicBox } from '../AudioManager/musicBoxPlayer';
 import { commandFollow, commandGoto, commandHold, commandSit, recover } from '../CompanionController/companionController';
 import { greeting, hintLines, manjaLines, memoryLines, placeLines, goodbyeLine, type TalkContext } from '../DialogueManager/dialogueEngine';
 import { on } from '../events';
@@ -1309,12 +1310,18 @@ export function initStory() {
     },
   });
   reg('musicBox', {
-    label: () => A.musicBox,
+    label: () => {
+      const s = musicBox.getState();
+      return s === 'playing' || s === 'loading' ? A.musicBoxPause : s === 'paused' ? A.musicBoxResume : A.musicBox;
+    },
     available: () => true,
+    // Play / pause "Jatuh Suka". toggle() runs synchronously inside the tap or
+    // key press, which phones require before audio may start.
     run: () => {
-      [0, 300, 600, 900, 1200].forEach((ms) => window.setTimeout(() => audio.sfx('note'), ms));
-      setCompanionEmote('note', 3);
-      ui().showBark(pick(dialogueConfig.objects.musicBox));
+      const wasIdle = musicBox.getState() === 'idle' || musicBox.getState() === 'error';
+      musicBox.toggle();
+      if (musicBox.isActive) setCompanionEmote('note', 3);
+      if (musicBox.isActive && wasIdle) ui().showBark(pick(dialogueConfig.objects.musicBox));
     },
   });
   reg('vase', {

@@ -60,50 +60,60 @@ export function TitleScreen() {
   };
 
   return (
-    <div className="safe-pad absolute inset-0 z-30 flex flex-col items-center justify-center bg-gradient-to-b from-plum-deep/40 via-transparent to-plum-deep/60 text-center">
-      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.4 }} className="flex flex-col items-center">
-        <Crown className="floaty text-gold-soft drop-shadow-[0_0_14px_rgba(243,220,164,0.9)]" size={40} />
-        <h1 className="gold-text mt-3 font-serif text-[44px] font-bold leading-[0.95] drop-shadow-[0_4px_18px_rgba(60,20,50,0.55)] sm:text-7xl">
-          {T.titleLine1}
-          <br />
-          {T.titleLine2}
-        </h1>
-        <p className="mt-3 font-serif text-xl italic text-ivory drop-shadow sm:text-2xl">{T.subtitle}</p>
-        <div className="divider-gold my-4 w-64" />
-        <p className="max-w-md font-serif text-lg italic leading-snug text-ivory/90 drop-shadow sm:text-xl">“{fill(gameConfig.OPENING.tagline)}”</p>
-      </motion.div>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 1 }} className="mt-9 flex w-full max-w-xs flex-col gap-2.5">
-        {started ? (
-          <>
-            <button className="royal-btn text-lg" onClick={cont}>
-              <Play size={18} /> {T.continue}
+    // scroll-y + the inner m-auto wrapper: centred when everything fits, and
+    // scrollable from the top if it ever doesn't, so nothing is ever cut off.
+    // The [@media(max-height:500px)] classes are a compact layout for short
+    // screens only (phones held sideways, e.g. 844×390): smaller crown, type
+    // and spacing, and the secondary buttons side by side, so the title and
+    // every button fit without scrolling. Desktop, tablet and portrait phones
+    // keep the original layout.
+    <div className="safe-pad scroll-y absolute inset-0 z-30 flex flex-col items-center bg-gradient-to-b from-plum-deep/40 via-transparent to-plum-deep/60 text-center">
+      <div className="m-auto flex w-full flex-col items-center">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.4 }} className="flex flex-col items-center">
+          <Crown className="floaty text-gold-soft drop-shadow-[0_0_14px_rgba(243,220,164,0.9)] [@media(max-height:500px)]:h-7 [@media(max-height:500px)]:w-7" size={40} />
+          <h1 className="gold-text mt-3 font-serif text-[44px] font-bold leading-[0.95] drop-shadow-[0_4px_18px_rgba(60,20,50,0.55)] sm:text-7xl [@media(max-height:500px)]:mt-1.5 [@media(max-height:500px)]:text-[40px]">
+            {T.titleLine1}
+            <br />
+            {T.titleLine2}
+          </h1>
+          <p className="mt-3 font-serif text-xl italic text-ivory drop-shadow sm:text-2xl [@media(max-height:500px)]:mt-1 [@media(max-height:500px)]:text-base">{T.subtitle}</p>
+          <div className="divider-gold my-4 w-64 [@media(max-height:500px)]:my-1.5" />
+          <p className="max-w-md font-serif text-lg italic leading-snug text-ivory/90 drop-shadow sm:text-xl [@media(max-height:500px)]:text-sm">“{fill(gameConfig.OPENING.tagline)}”</p>
+        </motion.div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 1 }} className="mt-9 flex w-full max-w-xs flex-col gap-2.5 [@media(max-height:500px)]:mt-3 [@media(max-height:500px)]:max-w-md [@media(max-height:500px)]:flex-row [@media(max-height:500px)]:flex-wrap">
+          {started ? (
+            <>
+              <button className="royal-btn text-lg [@media(max-height:500px)]:basis-full" onClick={cont}>
+                <Play size={18} /> {T.continue}
+              </button>
+              {lastSavedAt && (
+                <p className="-mt-1 text-[11px] text-ivory/80 drop-shadow [@media(max-height:500px)]:basis-full">
+                  {T.savedAt} {new Date(lastSavedAt).toLocaleString('ms-MY', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                </p>
+              )}
+              <button className="soft-btn [@media(max-height:500px)]:flex-1" onClick={() => void restart()}>
+                <RotateCcw size={16} /> {T.newGame}
+              </button>
+            </>
+          ) : (
+            <button className="royal-btn text-lg [@media(max-height:500px)]:basis-full" onClick={begin}>
+              <Sparkles size={18} /> {T.start}
             </button>
-            {lastSavedAt && (
-              <p className="-mt-1 text-[11px] text-ivory/80 drop-shadow">
-                {T.savedAt} {new Date(lastSavedAt).toLocaleString('ms-MY', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
-              </p>
-            )}
-            <button className="soft-btn" onClick={() => void restart()}>
-              <RotateCcw size={16} /> {T.newGame}
-            </button>
-          </>
-        ) : (
-          <button className="royal-btn text-lg" onClick={begin}>
-            <Sparkles size={18} /> {T.start}
+          )}
+          <button className="soft-btn [@media(max-height:500px)]:flex-1" onClick={() => openPanel('settings')}>
+            <SettingsIcon size={16} /> {T.settings}
           </button>
+        </motion.div>
+        {recovery && (
+          <p role="status" className="royal-glass mt-4 max-w-sm rounded-2xl px-3 py-2 text-xs text-plum">
+            {recovery.from === 'backup'
+              ? T.restoredFromBackup
+              : T.unreadableSave}
+          </p>
         )}
-        <button className="soft-btn" onClick={() => openPanel('settings')}>
-          <SettingsIcon size={16} /> {T.settings}
-        </button>
-      </motion.div>
-      {recovery && (
-        <p role="status" className="royal-glass mt-4 max-w-sm rounded-2xl px-3 py-2 text-xs text-plum">
-          {recovery.from === 'backup'
-            ? T.restoredFromBackup
-            : T.unreadableSave}
-        </p>
-      )}
-      <p className="absolute bottom-[max(10px,var(--safe-bottom))] text-[11px] text-ivory/70">{T.soundHint}</p>
+      </div>
+      {/* On short screens the hint sits below the buttons instead of over them. */}
+      <p className="absolute bottom-[max(10px,var(--safe-bottom))] text-[11px] text-ivory/70 [@media(max-height:500px)]:static [@media(max-height:500px)]:mt-2">{T.soundHint}</p>
     </div>
   );
 }

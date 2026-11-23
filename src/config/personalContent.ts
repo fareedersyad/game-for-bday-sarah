@@ -1083,6 +1083,8 @@ export const personalContent = {
       memoryStar: 'Bintang Kenangan',
       throne: 'Duduk di singgahsana',
       musicBox: 'Main kotak muzik',
+      musicBoxPause: 'Jeda lagu',
+      musicBoxResume: 'Sambung lagu',
       vase: 'Lihat jambangan bunga',
       secretDoor: 'Pintu misteri',
       openFinalLetter: 'Buka surat terakhir',
@@ -1391,6 +1393,14 @@ export const personalContent = {
       storybookMap: 'Peta kerajaan (Mod Buku Cerita)',
       storybookMode: 'Mod Buku Cerita (2D)',
       currentQuestHint: 'Misi sekarang: “{quest}” — {objective}{count}.',
+    },
+    /** Small player shown while the Music Box song is playing (Grand Hall only). */
+    musicBox: {
+      songTitle: 'Jatuh Suka',
+      artist: 'Tulus',
+      loading: 'Memuatkan lagu…',
+      pause: 'Jeda lagu',
+      error: 'Lagu tidak dapat dimainkan. Cuba tekan kotak muzik sekali lagi.',
     },
     error: {
       title: 'Alamak, ada sedikit gangguan…',

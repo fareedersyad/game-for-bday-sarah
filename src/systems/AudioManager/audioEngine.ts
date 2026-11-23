@@ -9,7 +9,8 @@
  * a user gesture (the "Enter Your Kingdom" button or the first tap).
  *
  * Bus graph:
- *   music ─┐
+ *   themes ─> themeBus (ducked while the Music Box song plays) ─┐
+ *   Music Box song (<audio>) ──────────────────────────────────> music ─┐
  *   sfx ───┼─> master ─> destination
  *   ambience ─> sfx
  *   thunder ──> sfx
@@ -81,6 +82,9 @@ class AudioEngine {
   private ctx: AudioContext | null = null;
   private master!: GainNode;
   private musicBus!: GainNode;
+  /** All procedural themes pass through here, so they can be lowered while the Music Box song plays. */
+  private themeBus!: GainNode;
+  private mediaSources = new WeakMap<HTMLMediaElement, MediaElementAudioSourceNode>();
   private sfxBus!: GainNode;
   private ambienceBus!: GainNode;
   private thunderBus!: GainNode;
@@ -149,6 +153,11 @@ class AudioEngine {
     this.ambienceBus = ctx.createGain();
     this.thunderBus = ctx.createGain();
     this.musicBus.connect(this.master);
+    this.themeBus = ctx.createGain();
+    this.themeBus.connect(this.musicBus);
+    const themeSend = ctx.createGain();
+    themeSend.gain.value = 0.6;
+    this.themeBus.connect(themeSend);
     this.sfxBus.connect(this.master);
     this.ambienceBus.connect(this.sfxBus);
     this.thunderBus.connect(this.sfxBus);
@@ -159,6 +168,7 @@ class AudioEngine {
     this.reverbSend = ctx.createGain();
     this.reverbSend.gain.value = 0.55;
     this.reverbSend.connect(this.reverb);
+    themeSend.connect(this.reverbSend);
     this.reverb.connect(this.master);
 
     // Shared white-noise buffer (2 s, looped).
@@ -320,10 +330,8 @@ class AudioEngine {
     const g = ctx.createGain();
     g.gain.setValueAtTime(0, t);
     g.gain.linearRampToValueAtTime(1, t + 2.5);
-    g.connect(this.musicBus);
-    const send = ctx.createGain();
-    send.gain.value = 0.6;
-    g.connect(send).connect(this.reverbSend);
+    // themeBus → music bus, plus a 0.6 reverb send (same mix as before).
+    g.connect(this.themeBus);
     this.themeGain = g;
     this.nextBarTime = t + 0.15;
     this.barIndex = 0;
@@ -557,6 +565,35 @@ class AudioEngine {
         for (let i = 0; i < 9; i++) noiseBurst(t + d + 0.15 + Math.random() * 0.9, 0.05, 0.03, 'highpass', 5000);
         break;
       }
+    }
+  }
+
+  /**
+   * Lower (or restore) the procedural background themes, e.g. while the
+   * Music Box song plays. Sound effects and the song itself are unaffected.
+   */
+  duckThemes(on: boolean) {
+    if (!this.ctx) return;
+    this.themeBus.gain.setTargetAtTime(on ? 0.12 : 1, this.ctx.currentTime, 0.35);
+  }
+
+  /**
+   * Route an <audio> element through the music bus, so the "Muzik" and master
+   * volume sliders and "Senyapkan semua" apply to it (iOS ignores
+   * element.volume). Returns false when Web Audio is unavailable — the element
+   * then simply plays on its own.
+   */
+  attachMediaElement(el: HTMLMediaElement): boolean {
+    if (!this.ctx) return false;
+    if (this.mediaSources.has(el)) return true;
+    try {
+      const src = this.ctx.createMediaElementSource(el);
+      src.connect(this.musicBus);
+      this.mediaSources.set(el, src);
+      if (this.ctx.state === 'suspended') void this.ctx.resume();
+      return true;
+    } catch {
+      return false;
     }
   }
 

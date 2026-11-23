@@ -57,6 +57,15 @@ export const gameConfig = {
     ...P.birthdayCake,
   },
   CREDITS: P.credits,
+
+  // ---------------------------------------------------------------- music box
+  /**
+   * Song played by the Music Box in the Grand Hall (next to the throne).
+   * The file lives in public/; the title shown on screen is in personalContent.ts.
+   */
+  MUSIC_BOX: {
+    file: 'audio/jatuh-suka.mp3',
+  },
 } as const;
 
 export type GameConfig = typeof gameConfig;

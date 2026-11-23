@@ -89,6 +89,29 @@ try {
   await sleep(1500);
   await page.screenshot({ path: `${OUT}/01-title.png` });
 
+  // ---------------------------------------------------------- official logo icons
+  {
+    const brand = await page.evaluate(() => ({
+      logoOnTitle: !!document.querySelector('img, picture, [data-testid="title-logo"]'),
+      links: [...document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"], link[rel="manifest"]')].map((l) => l.href),
+      iosName: document.querySelector('meta[name="apple-mobile-web-app-title"]')?.content,
+    }));
+    check('Logo is not shown on the title screen', !brand.logoOnTitle);
+    const bad = [];
+    const manifestUrl = brand.links.find((u) => u.endsWith('.webmanifest'));
+    const urls = [...brand.links];
+    if (manifestUrl) {
+      const man = await (await page.request.get(manifestUrl)).json();
+      for (const i of man.icons) urls.push(new globalThis.URL(i.src, manifestUrl).href);
+      if (man.short_name !== "Sarah's World" || new globalThis.URL(man.start_url, manifestUrl).pathname !== BASE) bad.push(`manifest ${man.short_name} ${man.start_url}`);
+    } else bad.push('no manifest link');
+    for (const u of urls) {
+      const r = await page.request.get(u);
+      if (r.status() !== 200 || !new globalThis.URL(u).pathname.startsWith(BASE)) bad.push(`${r.status()} ${u}`);
+    }
+    check('Favicons, iPhone icon, manifest and Android icons load under the Pages base path', bad.length === 0 && urls.length === 8 && brand.iosName === "Sarah's World", bad.join(', ') || `${urls.length} files`);
+  }
+
   const S = () => page.evaluate(() => {
     const A = window.__awmjfh;
     const s = A.store.getState();
@@ -809,6 +832,162 @@ try {
     check('Chat: "Padam perbualan" clears the chat only (progress kept)', !after.log.includes('Sayang, saya lapar') && after.candles && errs.length === 0, JSON.stringify({ candles: after.candles }));
     await c.close();
   }
+
+  // ---------------------------------------------------------- Music Box song "Jatuh Suka" (Grand Hall)
+  const musicBoxRun = async (contextOptions, label, useTouch) => {
+    const c = await browser.newContext(contextOptions);
+    const pg = await c.newPage();
+    const errs = [];
+    const songResponses = [];
+    pg.on('pageerror', (e) => errs.push(e.message));
+    pg.on('response', (r) => {
+      if (r.url().includes('jatuh-suka.mp3')) songResponses.push({ status: r.status(), type: r.headers()['content-type'] });
+    });
+    await pg.addInitScript((progress) => {
+      if (sessionStorage.getItem('seeded')) return;
+      sessionStorage.setItem('seeded', '1');
+      localStorage.setItem('awmjfh.progress.v1', JSON.stringify({ state: progress, version: 2 }));
+    }, savedProgress);
+    await pg.goto(URL, { waitUntil: 'load' });
+    await pg.waitForFunction(() => window.__awmjfh && window.__awmjfh.ui.getState().screen === 'title', null, { timeout: 60000 });
+    const cont = pg.getByRole('button', { name: /Sambung pengembaraan/ });
+    if (useTouch) await cont.tap();
+    else await cont.click();
+    await pg.waitForFunction(() => window.__awmjfh.ui.getState().screen === 'playing');
+    const sim = async (sec) => {
+      const t0 = await pg.evaluate(() => window.__awmjfh.runtime.time);
+      await pg.waitForFunction((t) => window.__awmjfh.runtime.time >= t, t0 + sec, { timeout: 60000, polling: 50 });
+    };
+    const place = async (x, z, area) => {
+      await pg.evaluate(
+        ({ x, z, area }) => {
+          const A = window.__awmjfh;
+          const p = A.runtime.player;
+          p.area = area;
+          p.x = x;
+          p.z = z;
+          p.yaw = Math.PI;
+          p.vx = p.vz = 0;
+        },
+        { x, z, area },
+      );
+      await sim(0.4);
+    };
+    const MB = () => pg.evaluate(() => ({ state: window.__awmjfh.musicBox.getState(), pos: window.__awmjfh.musicBox.position(), prompt: window.__awmjfh.ui.getState().prompt?.label, loc: window.__awmjfh.ui.getState().location }));
+    const press = async (expectedLabel) => {
+      if (useTouch) await pg.locator('button[aria-label="' + expectedLabel + '"]:not([data-testid="music-box-pause"])').first().tap();
+      else await pg.keyboard.press('KeyE');
+    };
+    const waitState = (s) => pg.waitForFunction((s) => window.__awmjfh.musicBox.getState() === s, s, { timeout: 30000 });
+
+    // Stand at the Music Box (Grand Hall, beside the throne).
+    await place(-6.5, -4.6, 'castle');
+    let m = await MB();
+    check(`${label}: Music Box prompt in the Grand Hall reads "Main kotak muzik"`, m.prompt === 'Main kotak muzik' && m.loc === 'castleHall' && m.state === 'idle' && songResponses.length === 0, JSON.stringify(m));
+
+    // Play.
+    await press('Main kotak muzik');
+    await waitState('playing');
+    await sleep(1500);
+    m = await MB();
+    const ducked = await pg.evaluate(() => window.__awmjfh.audio.themeBus?.gain.value);
+    if (!useTouch) await pg.screenshot({ path: `${OUT}/41-music-box-playing.png` });
+    check(
+      `${label}: interacting plays "Jatuh Suka" (real MP3 served, castle theme lowered)`,
+      m.state === 'playing' && m.pos > 0.3 && songResponses.some((r) => (r.status === 200 || r.status === 206) && /audio\/mpeg/.test(r.type ?? '')) && ducked < 0.5 && m.prompt === 'Jeda lagu',
+      JSON.stringify({ ...m, ducked: ducked?.toFixed(2), responses: songResponses }),
+    );
+
+    // Pause, then resume from the same place.
+    await press('Jeda lagu');
+    await waitState('paused');
+    const pausedAt = (await MB()).pos;
+    await sleep(1200);
+    const stillAt = (await MB()).pos;
+    await sim(0.4);
+    m = await MB();
+    check(`${label}: pressing again pauses (position kept, prompt "Sambung lagu")`, m.state === 'paused' && Math.abs(stillAt - pausedAt) < 0.05 && m.prompt === 'Sambung lagu', JSON.stringify({ pausedAt, stillAt, prompt: m.prompt }));
+    await press('Sambung lagu');
+    await waitState('playing');
+    await sleep(800);
+    m = await MB();
+    check(`${label}: pressing again resumes where it stopped`, m.state === 'playing' && m.pos >= pausedAt && m.pos < pausedAt + 5, JSON.stringify({ pausedAt, now: m.pos }));
+
+    // The small HUD player can pause it too.
+    const chip = pg.getByTestId('music-box-pause');
+    if (useTouch) await chip.tap();
+    else await chip.click();
+    await waitState('paused');
+    check(`${label}: HUD "Jeda lagu" button pauses the song`, (await MB()).state === 'paused');
+
+    // Leaving the Grand Hall stops it; other areas keep their own music.
+    await press('Sambung lagu');
+    await waitState('playing');
+    await place(16.1, -2.4, 'castle'); // bedroom
+    await sim(1.2);
+    m = await MB();
+    const afterLeave = await pg.evaluate(() => ({ theme: window.__awmjfh.audio.theme, duck: window.__awmjfh.audio.themeBus?.gain.value }));
+    check(`${label}: leaving the Grand Hall pauses the song and restores the music`, m.state === 'paused' && m.loc === 'bedroom' && afterLeave.duck > 0.8, JSON.stringify({ ...m, ...afterLeave }));
+    await place(0, -26, 'overworld');
+    await sim(1.2);
+    m = await MB();
+    const outside = await pg.evaluate(() => ({ theme: window.__awmjfh.audio.theme, duck: window.__awmjfh.audio.themeBus?.gain.value }));
+    check(`${label}: outdoors the song stays off and the area theme is unchanged`, m.state === 'paused' && outside.theme !== 'none' && outside.theme !== 'castle' && outside.duck > 0.95 && errs.length === 0, JSON.stringify({ ...m, ...outside, errs }));
+    await c.close();
+  };
+  await musicBoxRun({ viewport: { width: 1280, height: 800 } }, 'Music Box (desktop)', false);
+  await musicBoxRun(
+    { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1' },
+    'Music Box (phone, touch)',
+    true,
+  );
+
+  // ---------------------------------------------------------- title screen layout (4 screen sizes)
+  const titleLayout = async (name, contextOptions) => {
+    const c = await browser.newContext(contextOptions);
+    const pg = await c.newPage();
+    await pg.addInitScript(() => {
+      try {
+        localStorage.setItem('awmjfh.settings.v1', JSON.stringify({ state: { graphics: 'low', textSpeed: 'instant' }, version: 1 }));
+      } catch {}
+    });
+    await pg.goto(URL, { waitUntil: 'load' });
+    await pg.waitForFunction(() => window.__awmjfh && window.__awmjfh.ui.getState().screen === 'title', null, { timeout: 90000 });
+    await sleep(3000); // let the fade-in animations finish
+    const measure = () =>
+      pg.evaluate(() => {
+        const R = (el) => el.getBoundingClientRect();
+        const W = innerWidth, H = innerHeight;
+        const inView = (r) => r.top >= 0 && r.left >= 0 && r.bottom <= H && r.right <= W;
+        const overlap = (a, b) => a.top < b.bottom && b.top < a.bottom && a.left < b.right && b.left < a.right;
+        const btns = [...document.querySelectorAll('button')].filter((b) => R(b).width > 0);
+        const h1 = document.querySelector('h1');
+        const hint = [...document.querySelectorAll('p')].find((p) => /Lebih indah/.test(p.textContent));
+        const scroller = h1.closest('.scroll-y');
+        return {
+          buttons: btns.map((b) => `${b.textContent.trim()}${inView(R(b)) ? '' : ' (OFF-SCREEN)'}`),
+          allVisible: btns.length > 0 && btns.every((b) => inView(R(b))) && inView(R(h1)),
+          tapSize: btns.every((b) => R(b).height >= 36),
+          hintClear: !!hint && inView(R(hint)) && !btns.some((b) => overlap(R(hint), R(b))),
+          noScroll: scroller.scrollHeight <= scroller.clientHeight + 1 && document.documentElement.scrollWidth <= W,
+          logo: !!document.querySelector('img, picture'),
+        };
+      });
+    const fresh = await measure();
+    await pg.screenshot({ path: `${OUT}/42-title-${name}.png` });
+    // Saved-game title screen: Sambung pengembaraan / Mula baharu / Tetapan.
+    await pg.evaluate(() => window.__awmjfh.store.setState((s) => ({ flags: { ...s.flags, gameStarted: true } })));
+    await sleep(2000);
+    const saved = await measure();
+    await pg.screenshot({ path: `${OUT}/42-title-${name}-saved.png` });
+    const ok = (m) => m.allVisible && m.tapSize && m.hintClear && m.noScroll && !m.logo;
+    check(`Title screen (${name}): title and every button visible without scrolling, nothing overlapping`, ok(fresh) && ok(saved), JSON.stringify({ fresh: fresh.buttons, saved: saved.buttons, ...(ok(fresh) && ok(saved) ? {} : { fresh, saved }) }));
+    await c.close();
+  };
+  await titleLayout('desktop', { viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1 });
+  await titleLayout('tablet', { viewport: { width: 820, height: 1180 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  await titleLayout('phone-portrait', { viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
+  await titleLayout('phone-landscape', { viewport: { width: 844, height: 390 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
 
   // ---------------------------------------------------------- 2D fallback
   const fb2 = await browser.newContext({ viewport: { width: 1024, height: 768 } });

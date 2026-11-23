@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Backpack, Check, Crown, Heart, LoaderCircle, Map as MapIcon, Menu, ScrollText, TriangleAlert } from 'lucide-react';
+import { Backpack, Check, Crown, Heart, LoaderCircle, Map as MapIcon, Menu, Music, Pause, ScrollText, TriangleAlert } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useGameStore } from '../../stores/gameStore';
 import { useUI } from '../../stores/uiStore';
@@ -11,9 +11,11 @@ import { useSaveStatus } from '../../systems/SaveManager/saveManager';
 import { isTouchDevice } from '../../utils/device';
 import { fmt } from '../../utils/text';
 import { audio } from '../../systems/AudioManager/audioEngine';
+import { musicBox, useMusicBox } from '../../systems/AudioManager/musicBoxPlayer';
 import { personalContent } from '../../config/personalContent';
 
 const H = personalContent.ui.hud;
+const MB = personalContent.ui.musicBox;
 
 export function HUD() {
   const openPanel = useUI((s) => s.openPanel);
@@ -49,6 +51,7 @@ export function HUD() {
       </div>
       <InteractionPrompt />
       <SaveIndicator />
+      <MusicBoxChip hidden={blocked} />
       <StorageWarning />
     </div>
   );
@@ -137,6 +140,48 @@ export function InteractionPrompt() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+/**
+ * Small "now playing" chip while the Music Box song plays, with a pause
+ * button (handy on phones). Starting the song is only possible at the Music Box.
+ */
+function MusicBoxChip({ hidden }: { hidden: boolean }) {
+  const state = useMusicBox();
+  useEffect(() => {
+    if (state === 'error') useUI.getState().toast(MB.error, 'sparkles');
+  }, [state]);
+  const active = state === 'playing' || state === 'loading';
+  return (
+    <AnimatePresence>
+      {active && !hidden && (
+        <motion.div
+          initial={{ opacity: 0, y: -4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          className="royal-glass pointer-events-auto absolute right-[max(10px,var(--safe-right))] top-[calc(max(10px,var(--safe-top))+96px)] flex max-w-[min(70vw,260px)] items-center gap-2 rounded-full py-1 pl-3 pr-1 text-xs text-plum"
+          role="status"
+          aria-live="polite"
+          data-testid="music-box-chip"
+          data-music-state={state}
+        >
+          {state === 'loading' ? <LoaderCircle size={14} className="shrink-0 animate-spin text-gold-deep motion-reduce:animate-none" /> : <Music size={14} className="shrink-0 text-gold-deep" />}
+          <span className="min-w-0 truncate">
+            <b className="font-semibold">{MB.songTitle}</b> · {state === 'loading' ? MB.loading : MB.artist}
+          </span>
+          <button
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-rosy-deep shadow-sm"
+            onClick={() => musicBox.pause()}
+            data-testid="music-box-pause"
+            aria-label={MB.pause}
+            title={MB.pause}
+          >
+            <Pause size={14} className="fill-current" />
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

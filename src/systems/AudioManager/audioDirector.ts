@@ -7,6 +7,7 @@ import { useUI } from '../../stores/uiStore';
 import { runtime } from '../runtime';
 import { LANDMARKS } from '../WorldManager/worldLayout';
 import { audio, type MusicTheme } from './audioEngine';
+import { musicBox } from './musicBoxPlayer';
 
 let timer = 0;
 let lastLevelsKey = '';
@@ -33,6 +34,8 @@ export function updateAudioDirector(dt: number) {
 
   const ui = useUI.getState();
   const p = runtime.player;
+  // The Music Box song only plays in the Grand Hall (never elsewhere).
+  musicBox.enforce({ screen: ui.screen, location: ui.location, area: p.area, hidden: typeof document !== 'undefined' && document.hidden });
   const w = runtime.weather;
   const topOverlay = ui.overlays[ui.overlays.length - 1]?.overlay;
 
